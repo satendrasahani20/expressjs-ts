@@ -1,6 +1,10 @@
 import express from "express";
-import {users} from "../controller/users/users"
+import {createUser, getUser} from "../controller/users/users"
 export const UserRouter:express.IRouter=express.Router();
 UserRouter
 .route("/")
-.get(users)
+.get(getUser)
+
+UserRouter
+.route("/")
+.post(createUser)
